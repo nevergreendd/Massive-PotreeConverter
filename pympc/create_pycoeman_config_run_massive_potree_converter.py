@@ -31,8 +31,9 @@ def run(inputFolder, outputFile, outputFormat, levels, spacing, extent):
             localOutputFolder = tile + '_potree'
 
             xmlCommandElement = etree.SubElement(xmlComponentElement, 'command')
-            xmlCommandElement.text = 'PotreeConverter --outdir ' + localOutputFolder + ' --levels ' + str(levels) + ' --output-format ' + str(outputFormat).upper() + ' --source ' + tile + ' --spacing ' + str(spacing) + ' --aabb "' + extent + '"'
-
+            # xmlCommandElement.text = 'PotreeConverter --outdir ' + localOutputFolder + ' --levels ' + str(levels) + ' --output-format ' + str(outputFormat).upper() + ' --source ' + tile + ' --spacing ' + str(spacing) + ' --aabb "' + extent + '"'
+            xmlCommandElement.text = 'PotreeConverter ' + tile + ' --outdir ' + localOutputFolder + ' --levels ' + str(levels) + ' --output-format ' + str(outputFormat).upper() + ' --spacing ' + str(spacing) + ' --aabb "' + extent + '"'
+            
             xmlOutputElement = etree.SubElement(xmlComponentElement, 'output')
             xmlOutputElement.text = localOutputFolder
 
