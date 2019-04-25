@@ -10,11 +10,11 @@ RUN apt-get install -y wget git cmake build-essential gcc g++
 RUN apt-get install -y libgeos-dev libproj-dev libtiff-dev libgeotiff-dev
 RUN apt-get install -y libgdal-dev
 WORKDIR /opt
-RUN wget http://download.osgeo.org/laszip/laszip-2.1.0.tar.gz
-RUN tar xvfz laszip-2.1.0.tar.gz
-WORKDIR /opt/laszip-2.1.0
+RUN wget http://download.osgeo.org/laszip/laszip-src-3.4.1.tar.gz
+RUN tar xvfz laszip-src-3.4.1.tar.gz
+WORKDIR /opt/laszip-src-3.4.1
 RUN mkdir makefiles
-WORKDIR /opt/laszip-2.1.0/makefiles/
+WORKDIR /opt/laszip-src-3.4.1/makefiles/
 RUN cmake ..
 RUN make; make install
 WORKDIR /opt
