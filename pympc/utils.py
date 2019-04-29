@@ -2,7 +2,7 @@
 """Various methods reused in main scripts"""
 import sys, os, glob2, subprocess, struct, numpy, math, multiprocessing
 
-PC_FILE_FORMATS = ['las','laz']
+PC_FILE_FORMATS = ['las','laz','ply']
 OCTTREE_NODE_NUM_CHILDREN = 8
 
 DB_NAME = 'pc_extents'
